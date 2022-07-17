@@ -3,7 +3,7 @@ import Section from './Section';
 import FeedbackOptions from './FeedbackOptions';
 import Statistics from './Statistics';
 import Notification from './Notification';
-import css from './app.module.css';
+import { Container } from './app.styled';
 
 export class App extends Component {
   state = {
@@ -37,7 +37,7 @@ export class App extends Component {
     const objectKeys = Object.keys(this.state);
     const total = this.countTotalFeedback();
     return (
-      <div className={css.container}>
+      <Container>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={objectKeys}
@@ -58,7 +58,7 @@ export class App extends Component {
             ></Statistics>
           )}
         </Section>
-      </div>
+      </Container>
     );
   }
 }
